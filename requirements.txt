@@ -1,0 +1,12 @@
+flask==2.3.3
+flask-cors==4.0.1
+requests==2.31.0
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.4.2
+joblib==1.4.2
+tensorflow==2.15.1
+gunicorn==22.0.0
+pytest==8.3.2
+matplotlib==3.9.0
+urllib3==2.2.3

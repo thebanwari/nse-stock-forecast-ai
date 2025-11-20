@@ -29,9 +29,24 @@ I built this mainly to understand how LSTM models behave with time-series data a
 
 ---
 
+##  Application Screenshot
+
+Below is a full view of the Stock Predictor UI, showing:
+
+- Stock input + autocomplete  
+- Prediction results (Buy/Sell, confidence, price change)  
+- 5-day forecast  
+- 1-year historical + 5-day future chart (Chart.js)
+
+<p align="center">
+  <img src="screenshots\Screenshot 2025-11-20 201034.png" width="900">
+</p>
+
 ## How to Run
 
 1. Clone the repository:
 ```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME
 cd YOUR_REPO_NAME
+
+

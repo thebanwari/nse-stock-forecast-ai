@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StockPredictor — AI NSE Forecast</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{ url_for('static', filename='stocks.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand"><div class="logo-square"></div><h1>StockPredictor</h1></div>
+      <p class="subtitle">AI-Powered NSE / BSE Price Forecast</p>
+    </header>
+
+    <main class="main-grid">
+      <section class="panel">
+        <div class="card">
+          <div class="row between">
+            <h2>Predict Stock Price</h2>
+            <div class="hint">Popular: TCS, INFY, RELIANCE, HDFCBANK</div>
+          </div>
+
+          <div class="control">
+            <div class="input-wrap">
+              <input id="symbol" placeholder="Enter stock symbol (e.g. TCS, INFY, RELIANCE)" autocomplete="off"/>
+              <div id="suggestBox" class="suggest-box" aria-hidden="true"></div>
+            </div>
+            <div class="buttons">
+              <button id="predictBtn" class="btn primary">Predict</button>
+              <button id="predictAllBtn" class="btn outline">Predict All</button>
+            </div>
+          </div>
+
+          <div id="status" class="status muted">Enter a symbol and click Predict.</div>
+        </div>
+
+        <div class="card info" id="resultCard" aria-hidden="true">
+          <div class="row between">
+            <h3 id="stockName">—</h3>
+            <div id="recPill" class="pill">—</div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <small>Price Change</small>
+              <div id="priceChange" class="stat-value">—</div>
+            </div>
+            <div class="stat">
+              <small>Confidence</small>
+              <div id="confidence" class="stat-value">—</div>
+            </div>
+            <div class="stat">
+              <small>Working Ticker</small>
+              <div id="workingTicker" class="stat-value">—</div>
+            </div>
+          </div>
+
+          <h4 class="mt">5-Day Predictions</h4>
+          <div id="predCards" class="pred-grid">
+            <div class="pred"><small>Day 1</small><strong id="d1">—</strong></div>
+            <div class="pred"><small>Day 2</small><strong id="d2">—</strong></div>
+            <div class="pred"><small>Day 3</small><strong id="d3">—</strong></div>
+            <div class="pred"><small>Day 4</small><strong id="d4">—</strong></div>
+            <div class="pred"><small>Day 5</small><strong id="d5">—</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="card chart-card">
+          <h4 class="chart-title">Price Trend (Historical + Forecast)</h4>
+          <canvas id="priceChart" height="360"></canvas>
+          <p class="caption">Blue = historical • Red = forecast</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <small>⚠️ This tool provides educational stock price estimates only. Not financial advice.</small>
+    </footer>
+  </div>
+</body>
+</html>
