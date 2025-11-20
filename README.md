@@ -39,7 +39,7 @@ Below is a full view of the Stock Predictor UI, showing:
 - 1-year historical + 5-day future chart (Chart.js)
 
 <p align="center">
-  <img src="screenshots\Screenshot 2025-11-20 201034.png" width="900">
+  <img src="screenshots\app_ui.png" width="900">
 </p>
 
 ## How to Run
